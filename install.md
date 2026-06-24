@@ -93,6 +93,15 @@ To setup CHALK, run the following command:
 python setup.py develop
 ```
 
+9\. Reinstall Numpy 
+---------------
+
+Downgrade NumPy to version 1.26.4 to ensure compatibility with PyTorch:
+
+```
+pip install numpy==1.26.4
+```
+
 9\. Download checkpoint files for Autolabeling Function 
 -------------------------------------------------------
 
