@@ -24,7 +24,7 @@ Navigate to the directory where you want to install CHALK, clone the repository,
 cd {path-to-chalk-folder}
 ```
 ```
-git clone [https://github.com/kongeun3/CHALK.git](https://github.com/kongeun3/CHALK.git)
+git clone https://github.com/kongeun3/CHALK.git
 ```
 ```
 cd CHALK
@@ -72,7 +72,7 @@ mim install mmdet
 Install the Segment Anything Model by running this command:
 
 ```
-pip install git+[https://github.com/facebookresearch/segment-anything.git](https://github.com/facebookresearch/segment-anything.git)
+pip install git+https://github.com/facebookresearch/segment-anything.git
 ```
 
 7\. Install PyDenseCRF from Lucas Beyer's GitHub Repository
@@ -81,7 +81,7 @@ pip install git+[https://github.com/facebookresearch/segment-anything.git](https
 Install PyDenseCRF by running this command:
 
 ```
-pip install git+[https://github.com/lucasb-eyer/pydensecrf.git](https://github.com/lucasb-eyer/pydensecrf.git)
+pip install git+https://github.com/lucasb-eyer/pydensecrf.git
 ```
 
 8\. Setup CHALK 
