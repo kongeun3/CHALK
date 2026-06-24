@@ -3,7 +3,34 @@ Install CHALK on Your Desktop
 
 Follow these steps to install CHALK on your desktop:
 
-1\. Install Required Packages
+1\. Create and Activate Anaconda Environment
+--------------------------------------------
+
+Create an Anaconda virtual environment with Python 3.9 or higher, and activate it:
+
+```
+conda create -n CHALK python=3.9 -y
+```
+```
+conda activate CHALK
+```
+
+2\. Clone the CHALK Repository
+------------------------------
+
+Navigate to the directory where you want to install CHALK, clone the repository, and move into the folder:
+
+```
+cd {path-to-chalk-folder}
+```
+```
+git clone [https://github.com/kongeun3/CHALK.git](https://github.com/kongeun3/CHALK.git)
+```
+```
+cd CHALK
+```
+
+3\. Install Required Packages
 -----------------------------
 
 Install the necessary packages by running the following command in your terminal or command prompt:
@@ -12,52 +39,52 @@ Install the necessary packages by running the following command in your terminal
 pip install -r requirements.txt
 ```
 
-2\. Install PyTorch Compatible with Your Desktop Environment
+4\. Install PyTorch Compatible with Your Desktop Environment
 ------------------------------------------------------------
 
-CHALK has been tested with PyTorch 1.13. To install the appropriate version of PyTorch for your system, visit the PyTorch previous versions page:
-
-[https://pytorch.org/get-started/previous-versions/](https://pytorch.org/get-started/previous-versions/)
-
-Here's an example installation command for CUDA 11.6:
-
+Install PyTorch 2.1 compatible with CUDA 12.1 (updated at: 2026-06-25):
 
 ```
-pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu116
+conda install pytorch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 pytorch-cuda=12.1 -c pytorch -c nvidia
 ```
 
-3\. Install MMSegmentation Using the OpenMIM Installer
-------------------------------------------------------
+5\. Install MMSegmentation and MMDetection Using OpenMIM
+--------------------------------------------------------
 
-To install MMSegmentation and its required dependencies, run the following commands:
-
+To install MMSegmentation, MMDetection, and their required dependencies, run the following commands:
 
 ```
 pip install -U openmim
-mim install mmcv 
-mim install mmsegmentation
+```
+```
+mim install "mmcv<2.2.0"
+```
+```
+mim install "mmsegmentation>=1.0.0"
+```
+```
+mim install mmdet
 ```
 
-4\. Install the Segment Anything Model from the FAIR GitHub Repository
-----------------------------------------------------------------------
+6\. Install the Segment Anything Model (SAM1)
+---------------------------------------------
 
 Install the Segment Anything Model by running this command:
 
-
 ```
-pip install git+https://github.com/facebookresearch/segment-anything.git
+pip install git+[https://github.com/facebookresearch/segment-anything.git](https://github.com/facebookresearch/segment-anything.git)
 ```
 
-5\. Install PyDenseCRF from Lucas Beyer' GitHub Repository
-----------------------------------------------------------
+7\. Install PyDenseCRF from Lucas Beyer's GitHub Repository
+-----------------------------------------------------------
 
 Install PyDenseCRF by running this command:
 
 ```
-pip install git+https://github.com/lucasb-eyer/pydensecrf.git
+pip install git+[https://github.com/lucasb-eyer/pydensecrf.git](https://github.com/lucasb-eyer/pydensecrf.git)
 ```
 
-6\. Setup CHALK 
+8\. Setup CHALK 
 ---------------
 
 To setup CHALK, run the following command:
@@ -66,7 +93,7 @@ To setup CHALK, run the following command:
 python setup.py develop
 ```
 
-7\. Download checkpoint files for Autolabeling Function 
+9\. Download checkpoint files for Autolabeling Function 
 -------------------------------------------------------
 
 Checkpoints for the autolabeling function are available at the following links and should be placed in the `dnn/checkpoints` directory:
