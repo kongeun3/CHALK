@@ -3,3 +3,6 @@ scikit-image
 numba
 PySide6
 slidingwindow
+fsspec
+mkl==2021.4.8
+ftfy
