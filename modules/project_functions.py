@@ -163,6 +163,13 @@ class ProjectFunctions(object):
             
         with open(os.path.join(path, createProjectFile_name), 'w') as fp:
             json.dump(self.new_project_info, fp)
+        
+        # [DEBUG] Make Project Subfolders
+        subfolder_list = ["leftImg8bit", "gtFine"]
+        sub_subfolder_list = ["train", "val", "test"]
+        for subfolder in subfolder_list:
+            for sub_subfolder in sub_subfolder_list:
+                os.makedirs(os.path.join(path, subfolder, sub_subfolder), exist_ok=True)
 
         self.projectClass.close()
 
